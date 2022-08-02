@@ -9,12 +9,18 @@ function TodoList() {
 
     const Add = todo => {
         if(!todo.text || /^\s*$/.test(todo.text)) {
-            console.log('hi')
             return;
         }
         const newTodos = [todo, ...Todos];
         setTodos(newTodos);
     };
+
+    const updateTodo = (todoId, nuValue) => {
+        if (!nuValue.text || /^\s*$/.test(nuValue.text)) {
+          return;
+        }
+        setTodos(pre => pre.map(item => (item.id === todoId ? nuValue : item)));
+      };
 
     const removeTodo = id => {
         const removeArray = [...Todos].filter(todo => todo.id !== id)
@@ -39,6 +45,7 @@ function TodoList() {
             Todos={Todos}
             completeTodo={completeTodo}
             removeTodo={removeTodo}
+            updateTodo={updateTodo}
         />
     </div>
   )

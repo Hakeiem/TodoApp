@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 function TodoForm(props) {
     const[input, setInput] = useState('');
-    const [id, setId] = useState(0);
+    const [id, setId] = useState(1);
     const giveId=()=>{
         setId(id + 1)
         return id;
