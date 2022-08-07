@@ -1,0 +1,87 @@
+* {
+    /* padding: 0px; */
+    margin: 0;
+}
+
+.App {
+    margin: 0px;
+    background-color:aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.formBox {
+    background-color: rgb(210, 247, 255);
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 15rem;
+    width: 30rem;
+    border-radius: 20px;
+}
+
+.inputBox{
+    margin-top: -20px;
+    width: 60%;
+    outline: none;
+    height: 2.4rem;
+    border: none;
+    z-index: 2;
+    border-radius: 13px;
+    font-size: 18px;
+    box-shadow: 0px 20px 66px -14px rgba(71,70,71,1);
+    transition: ease-in 100ms;
+}
+
+.inputBox:hover {
+    box-shadow: 0px 20px 66px -14px rgb(0, 183, 255);
+
+}
+
+.SubBtn {
+    margin-top: 4.5rem;
+    height: 3rem;
+    background-color: rgb(130, 182, 255);
+    width: 6rem;
+    border: none;
+    border-radius: 15px;
+    font-size: 22px;
+    color: white;
+    transition: ease-out 200ms;
+}
+
+.SubBtn:hover {
+    background-color:aliceblue;
+    color: rgb(130, 182, 255);
+    transition: ease-in 200ms;
+}
+
+.space {
+    margin-top: 2rem;
+}
+.ListBox {
+    margin-top: 4px;
+    background-color: rgba(144, 255, 255, 0.581);
+    display: flex;
+    padding-right: .3rem;
+    padding-left: .3rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: inherit;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.Icons {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    color: rgb(66, 102, 179);
+    cursor: pointer;
+}

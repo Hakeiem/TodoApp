@@ -1,7 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 function TodoForm(props) {
-    const[input, setInput] = useState('');
+    const[input, setInput] = useState(props.editor ? props.editor.value : '');
+
+    const Ref = useRef(null)
+
+    useEffect(() => {
+        Ref.current.focus()
+    })
+
     const [id, setId] = useState(1);
     const giveId=()=>{
         setId(id + 1)
@@ -22,16 +29,17 @@ function TodoForm(props) {
         setInput('');
     };
     return (
-        <form className="form-box" onSubmit={Submit}>
+        <form className="formBox" onSubmit={Submit}>
             <input 
                 type="text" 
                 placeholder="Enter here.." 
                 value={input}
                 name="text"  
-                className="input-box"
+                className="inputBox"
                 onChange={Change}
+                ref={Ref}
             />
-            <button className="btn-todo">Add</button>
+            <button className="SubBtn">Add</button>
         </form>
     )
 }

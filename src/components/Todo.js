@@ -22,26 +22,28 @@ function Todo({Todos, completeTodo, removeTodo, updateTodo}) {
         return <TodoForm editor={editor} onSubmit={Update} />
     }
 
-    return Todos.map((todo, index) => (
-        <div className={todo.isCompleted ? 
-            'todo-row complete' : 'todo-row'} 
-            key={index}
-        >
-            <div key={todo.id} onClick={() => completeTodo(todo.id)}>
-                {todo.text}
+    return (
+        <div className='space'>
+             {Todos.map((todo, index) => (
+            <div className="ListBox" key={index}>
+                <div key={todo.id} onClick={() => completeTodo(todo.id)}>
+                    {todo.text}
+                </div>
+                <div className="Icons">
+                    <RiCloseCircleLine 
+                    onClick={() => removeTodo(todo.id)}
+                    className="DelIcon"
+                    />
+                    <BiEditAlt 
+                    onClick={() => setEditor({id: todo.id, value: todo.text})}
+                    className="EditIcon"
+                    />
+                </div>
             </div>
-            <div className="icons">
-                <RiCloseCircleLine 
-                onClick={() => removeTodo(todo.id)}
-                className="delete"
-                />
-                <BiEditAlt 
-                onClick={() => setEditor({id: todo.id, value: todo.text})}
-                className="edit"
-                />
-            </div>
+             ))}
         </div>
-    ));
+
+    );
 }
 
 export default Todo

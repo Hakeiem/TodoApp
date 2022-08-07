@@ -39,7 +39,6 @@ function TodoList() {
 
   return (
     <div>
-        <h1>List</h1>
         <TodoForm  onSubmit={Add}/>
         <Todo 
             Todos={Todos}
