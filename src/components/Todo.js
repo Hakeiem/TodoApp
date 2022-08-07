@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import TodoForm from './TodoForm'
 import { RiCloseCircleLine } from 'react-icons/ri'
 import { BiEditAlt } from 'react-icons/bi'
+import { MdDoneOutline } from 'react-icons/md'
 
-function Todo({Todos, completeTodo, removeTodo, updateTodo}) {
+function Todo({Todos, completeTodo, doneTodo,removeTodo, updateTodo}) {
 
     const [editor, setEditor] = useState({
         id: null,
@@ -22,11 +23,13 @@ function Todo({Todos, completeTodo, removeTodo, updateTodo}) {
         return <TodoForm editor={editor} onSubmit={Update} />
     }
 
+
+
     return (
         <div className='space'>
              {Todos.map((todo, index) => (
-            <div className="ListBox" key={index}>
-                <div key={todo.id} onClick={() => completeTodo(todo.id)}>
+            <div className={todo.isCompleted ? 'ListBox completed' : 'ListBox'} key={index}>
+                <div key={todo.id} className='cursor' onClick={() => completeTodo(todo.id)}>
                     {todo.text}
                 </div>
                 <div className="Icons">

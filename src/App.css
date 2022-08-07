@@ -3,6 +3,12 @@
     margin: 0;
 }
 
+@media screen and (max-width: 720px) {
+    *{
+       font-size: 11px;
+    }
+}
+
 .App {
     margin: 0px;
     background-color:aliceblue;
@@ -77,6 +83,23 @@
     height: 50px;
     border-radius: 5px;
 }
+.cursor {
+    cursor: pointer;
+    -webkit-user-select: none;
+}
+
+.ListBox:nth-child(4n + 1){
+    background-color: rgba(114, 211, 211, 0.581);
+}
+.ListBox:nth-child(4n + 2){
+    background-color: rgb(87, 210, 210);
+}
+.ListBox:nth-child(4n + 3){
+    background-color: rgba(102, 193, 239, 0.581);
+}
+.ListBox:nth-child(4n + 4){
+    background-color: rgb(71, 204, 216);
+}
 
 .Icons {
     display: flex;
@@ -84,4 +107,21 @@
     font-size: 24px;
     color: rgb(66, 102, 179);
     cursor: pointer;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 60%;
+}
+
+.DonIcon:hover {
+    color: rgb(143, 166, 216);
+}
+
+.DelIcon:hover {
+    color: rgb(143, 166, 216);
+}
+
+.EditIcon:hover {
+    color: rgb(143, 166, 216);
 }

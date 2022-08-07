@@ -30,16 +30,34 @@ function TodoForm(props) {
     };
     return (
         <form className="formBox" onSubmit={Submit}>
-            <input 
-                type="text" 
-                placeholder="Enter here.." 
-                value={input}
-                name="text"  
-                className="inputBox"
-                onChange={Change}
-                ref={Ref}
-            />
-            <button className="SubBtn">Add</button>
+            {props.editor ? (
+                <>
+                <input 
+                    type="text" 
+                    placeholder="Enter here.." 
+                    value={input}
+                    name="text"  
+                    className="inputBox"
+                    onChange={Change}
+                    ref={Ref}
+                />
+            <button className="SubBtn">Upadte</button>
+            </>
+            ) : (
+                <>
+                <input 
+                    type="text" 
+                    placeholder="Enter here.." 
+                    value={input}
+                    name="text"  
+                    className="inputBox"
+                    onChange={Change}
+                    ref={Ref}
+                />
+                <button className="SubBtn">Add</button>
+                </>
+            )
+            }
         </form>
     )
 }

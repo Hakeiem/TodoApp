@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import Todo from './Todo';
-import TodoForm from './TodoForm'
-// import Todo from './Todo'
+import TodoForm from './TodoForm';
 
 function TodoList() {
 
